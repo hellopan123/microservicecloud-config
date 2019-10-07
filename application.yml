@@ -1,19 +1,14 @@
-﻿spring:  
-    profiles: 
-        active: dev
-
+﻿spring:
+  profiles:
+    active: dev
 ---
-spring: 
-    profiles: dev #开发模式
-    application: 
-        name: microservicecloud-config-hellopan-dev
-        
+spring:
+  profiles: dev #开发模式
+  application:
+    name: microservicecloud-config-hellopan-dev
 ---
-spring: 
-    profiles: test #测试模式
-    application: 
-        name: microservicecloud-config-hellopan-test   
-
-
-
+spring:
+  profiles: test #测试模式
+  application:
+    name: microservicecloud-config-hellopan-test
 #请保存为UTF-8 格式
