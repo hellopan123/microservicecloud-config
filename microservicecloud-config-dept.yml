@@ -4,10 +4,6 @@ spring:
     active: dev
 
 ---
-spring:
-  profiles: dev #测试模式
-  application:
-    name: microservicecloud-config-dept
 server:
   port: 8001
 
@@ -18,6 +14,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
 spring:
+   profiles: dev #测试模式
    application:
     name: microservicecloud-config-dept                     # 注册中心名字
    datasource:
@@ -42,10 +39,6 @@ eureka:
 
 
 ---
-spring:
-  profiles: test #测试模式
-  application:
-    name: microservicecloud-config-dept
 server:
   port: 8001
 
@@ -56,6 +49,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
 spring:
+  profiles: test #测试模式
    application:
     name: microservicecloud-config-dept                     # 注册中心名字
    datasource:
