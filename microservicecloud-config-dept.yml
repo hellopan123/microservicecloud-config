@@ -38,10 +38,6 @@ eureka:
     prefer-ip-address: true                     #访问路径显示服务ip地址
 
 ---
-spring:
-  profiles: test #测试模式
-  application:
-    name: microservicecloud-config-dept
 server:
   port: 8001
 
@@ -54,7 +50,7 @@ mybatis:
 spring:
   profiles: test #测试模式
   application:
-    name: microservicecloud-dept                            # 注册中心名字
+    name: microservicecloud-config-dept                            # 注册中心名字
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
