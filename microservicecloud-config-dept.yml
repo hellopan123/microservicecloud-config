@@ -1,0 +1,124 @@
+#没有匹配的展示
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev #测试模式
+  application:
+    name: microservicecloud-config-dept
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.hellopan.springcloud.entitis    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
+spring:
+   application:
+    name: microservicecloud-dept                            # 注册中心名字
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: microservicecloud-dept-8001    #自定义服务名称
+    prefer-ip-address: true                     #访问路径显示服务ip地址
+
+
+#微服务信息数据
+info:
+  app.name: hellopan-microservicecloud
+  company.name: www.hellopan.com
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@
+
+---
+spring:
+  profiles: test #测试模式
+  application:
+    name: microservicecloud-config-dept
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.hellopan.springcloud.entitis    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
+spring:
+   application:
+    name: microservicecloud-dept                            # 注册中心名字
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB02              # 数据库名称
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: microservicecloud-dept-8001    #自定义服务名称
+    prefer-ip-address: true                     #访问路径显示服务ip地址
+
+
+#微服务信息数据
+info:
+  app.name: hellopan-microservicecloud
+  company.name: www.hellopan.com
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@
+
+---
+spring:
+  profiles: dev #测试模式
+  application:
+    name: microservicecloud-config-dept-client
+server:
+  port: 8080
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+---
+spring:
+  profiles: test #测试模式
+  application:
+    name: microservicecloud-config-dept-client
+server:
+  port: 8081
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+#请保存为UTF-8 格式
