@@ -41,13 +41,6 @@ eureka:
     prefer-ip-address: true                     #访问路径显示服务ip地址
 
 
-#微服务信息数据
-info:
-  app.name: hellopan-microservicecloud
-  company.name: www.hellopan.com
-  build.artifactId: @project.artifactId@
-  build.version: @project.version@
-
 ---
 spring:
   profiles: test #测试模式
@@ -84,14 +77,6 @@ eureka:
   instance:
     instance-id: microservicecloud-config-dept-8001    #自定义服务名称
     prefer-ip-address: true                     #访问路径显示服务ip地址
-
-
-#微服务信息数据
-info:
-  app.name: hellopan-microservicecloud
-  company.name: www.hellopan.com
-  build.artifactId: @project.artifactId@
-  build.version: @project.version@
 
 ---
 spring:
